@@ -15,6 +15,7 @@ func main() {
 	var userNum int
 	_, err := fmt.Fscan(os.Stdin, &userNum)
 	if err != nil {
+		fmt.Println(err)
 		panic(err)
 	}
 
