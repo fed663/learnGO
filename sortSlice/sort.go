@@ -20,7 +20,7 @@ func smallIndex(arr []int) int {
 }
 
 func sortSlice(arr []int) []int {
-	var sorted []int
+	sorted := make([]int, 0, len(arr))
 
 	for len(arr) > 0 {
 		sIndex := smallIndex(arr)
