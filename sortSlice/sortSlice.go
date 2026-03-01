@@ -15,12 +15,13 @@ func smallIndex(arr []int) int {
 }
 
 func sortSlice(arr []int) []int {
-	sorted := make([]int, 0, len(arr))
+	arrCopy := append([]int(nil), arr...)
+	sorted := make([]int, 0, len(arrCopy))
 
-	for len(arr) > 0 {
-		sIndex := smallIndex(arr)
-		sorted = append(sorted, arr[sIndex])
-		arr = append(arr[:sIndex], arr[sIndex+1:]...)
+	for len(arrCopy) > 0 {
+		sIndex := smallIndex(arrCopy)
+		sorted = append(sorted, arrCopy[sIndex])
+		arrCopy = append(arrCopy[:sIndex], arrCopy[sIndex+1:]...)
 	}
 
 	return sorted
